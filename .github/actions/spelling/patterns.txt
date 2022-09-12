@@ -1,0 +1,262 @@
+# See https://github.com/check-spelling/check-spelling/wiki/Configuration-Examples:-patterns
+
+# Automatically suggested patterns
+# hit-count: 4791 file-count: 1246
+# https/http/file urls
+(?:\b(?:https?|ftp|file)://)[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]
+
+# hit-count: 411 file-count: 187
+# hex runs
+\b[0-9a-fA-F]{16,}\b
+
+# hit-count: 390 file-count: 39
+# URL escaped characters
+\%(?:25)*[0-9A-F][A-F](?=[A-Za-z])
+
+# hit-count: 345 file-count: 95
+# Contributor
+\[[^\]]+\]\(https://github\.com/[^/\s"]+/?\)
+
+# hit-count: 282 file-count: 126
+# GitHub actions
+\buses:\s+[-\w.]+/[-\w./]+@[-\w.]+
+
+# hit-count: 146 file-count: 58
+# version suffix <word>v#
+(?:(?<=[A-Z]{2})V|(?<=[a-z]{2}|[A-Z]{2})v)\d+(?:\b|(?=[a-zA-Z_]))
+
+# hit-count: 85 file-count: 20
+# hex digits including css/html color classes:
+(?:[\\0][xX]|\\u|[uU]\+|#x?|\%23)[0-9_a-fA-FgGrR]*?[a-fA-FgGrR]{2,}[0-9_a-fA-FgGrR]*(?:[uUlL]{0,3}|[iu]\d+)\b
+
+# hit-count: 53 file-count: 51
+# node packages
+(["'])\@[^/'" ]+/[^/'" ]+\g{-1}
+
+# hit-count: 37 file-count: 18
+# uuid:
+\b[0-9a-fA-F]{8}-(?:[0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}\b
+
+# hit-count: 33 file-count: 11
+# sha-... -- uses a fancy capture
+(\\?['"]|&quot;)[0-9a-f]{40,}\g{-1}
+
+# hit-count: 29 file-count: 15
+# base64 encoded content
+([`'"])[-a-zA-Z=;:/0-9+]{3,}=\g{-1}
+
+# hit-count: 23 file-count: 9
+# IPv6
+\b(?:[0-9a-fA-F]{0,4}:){3,7}[0-9a-fA-F]{0,4}\b
+
+# hit-count: 17 file-count: 10
+# alternate markers if you run into latex and friends
+(?<!\\)\\[nt](?=[a-z]{2,})(?=.*['"`])
+
+# hit-count: 15 file-count: 8
+# Non-English
+[a-zA-Z]*[ÀÁÂÃÄÅÆČÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝßàáâãäåæčçèéêëìíîïðñòóôõöøùúûüýÿĀāŁłŃńŅņŒœŚśŠšŜŝŸŽžź][a-zA-Z]{3}[a-zA-ZÀÁÂÃÄÅÆČÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝßàáâãäåæčçèéêëìíîïðñòóôõöøùúûüýÿĀāŁłŃńŅņŒœŚśŠšŜŝŸŽžź]*|[a-zA-Z]{3,}[ÀÁÂÃÄÅÆČÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝßàáâãäåæčçèéêëìíîïðñòóôõöøùúûüýÿĀāŁłŃńŅņŒœŚśŠšŜŝŸŽžź]|[ÀÁÂÃÄÅÆČÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝßàáâãäåæčçèéêëìíîïðñòóôõöøùúûüýÿĀāŁłŃńŅņŒœŚśŠšŜŝŸŽžź][a-zA-Z]{3,}
+
+# hit-count: 14 file-count: 7
+# GHSA
+[Gg][Hh][Ss][Aa](?:-[0-9a-z]{4}){3}
+
+# hit-count: 13 file-count: 5
+# ssh
+(?:ssh-\S+|-nistp256) [-a-zA-Z=;:/0-9+]{12,}
+
+# hit-count: 8 file-count: 6
+# pki
+#-----BEGIN.*-----END
+
+# hit-count: 7 file-count: 7
+# javascript replace regex
+\.replace\(/[^/\s"]{3,}/[gim]*\s*,
+
+# hit-count: 6 file-count: 4
+# IServiceProvider / isAThing
+\b(?:I|isA)(?=(?:[A-Z][a-z]{2,})+(?:[A-Z]|\b))
+
+# hit-count: 6 file-count: 3
+# css url wrappings
+\burl\([^)]+\)
+
+# hit-count: 5 file-count: 4
+# curl arguments
+\b(?:\\n|)curl(?:\s+-[a-zA-Z]{1,2}\b)*(?:\s+-[a-zA-Z]{3,})(?:\s+-[a-zA-Z]+)*
+
+# hit-count: 4 file-count: 4
+# tar arguments
+\b(?:\\n|)g?tar(?:\.exe|)(?:(?:\s+--[-a-zA-Z]+|\s+-[a-zA-Z]+|\s[ABGJMOPRSUWZacdfh-pr-xz]+\b)(?:=[^ ]*|))+
+
+# hit-count: 4 file-count: 3
+# bearer auth
+(['"])Bear[e][r] .*?\g{-1}
+
+# hit-count: 4 file-count: 1
+# assign regex
+= /[^*]*?(?:[a-z]{3,}|[A-Z]{3,}|[A-Z][a-z]{2,}).*/
+
+# hit-count: 3 file-count: 3
+# mailto urls
+mailto:[-a-zA-Z=;:/?%&0-9+@._]{3,}
+
+# hit-count: 3 file-count: 2
+# kubernetes pod status lists
+# https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#pod-phase
+\w+(?:-\w+)+\s+\d+/\d+\s+(?:Running|Pending|Succeeded|Failed|Unknown)\s+
+
+# hit-count: 3 file-count: 1
+# Update Lorem based on your content (requires `ge` and `w` from https://github.com/jsoref/spelling; and `review` from https://github.com/check-spelling/check-spelling/wiki/Looking-for-items-locally )
+# grep '^[^#].*lorem' .github/actions/spelling/patterns.txt|perl -pne 's/.*i..\?://;s/\).*//' |tr '|' "\n"|sort -f |xargs -n1 ge|perl -pne 's/^[^:]*://'|sort -u|w|sed -e 's/ .*//'|w|review -
+# Warning, while `(?i)` is very neat and fancy, if you have some binary files that aren't proper unicode, you might run into:
+## Operation "substitution (s///)" returns its argument for non-Unicode code point 0x1C19AE (the code point will vary).
+## You could manually change `(?i)X...` to use `[Xx]...`
+## or you could add the files to your `excludes` file (a version after 0.0.19 should identify the file path)
+# Lorem
+(?:(?:\w|\s|[,.])*\b(?i)(?:amet|consectetur|cursus|dolor|eros|ipsum|lacus|libero|ligula|lorem|magna|neque|nulla|suscipit|tempus)\b(?:\w|\s|[,.])*)
+
+# hit-count: 2 file-count: 2
+# sha
+sha\d+:[0-9]*[a-f]{3,}[0-9a-f]*
+
+# hit-count: 2 file-count: 2
+# hex in url queries
+=[0-9a-fA-F]*?(?:[A-F]{3,}|[a-f]{3,})[0-9a-fA-F]*?&
+
+# hit-count: 2 file-count: 2
+# JavaScript regular expressions
+# javascript test regex
+/.{3,}/[gim]*\.test\(
+
+# hit-count: 2 file-count: 2
+# Time Zones
+\b(?:Africa|Atlantic|America|Antarctica|Asia|Australia|Europe|Indian|Pacific)(?:/\w+)+
+
+# hit-count: 2 file-count: 2
+# in check-spelling@v0.0.22+, printf markers aren't automatically consumed
+# multiple printf markers
+(?<!\\)(?:\\[nt]){2,}(?=[a-z]{2,})
+
+# hit-count: 2 file-count: 1
+# weak e-tag
+W/"[^"]+"
+
+# hit-count: 1 file-count: 1
+# data url in quotes
+([`'"])data:(?:[^ `'"].*?|)(?:[A-Z]{3,}|[A-Z][a-z]{2,}|[a-z]{3,}).*\g{-1}
+
+# hit-count: 1 file-count: 1
+# AWS VPC
+vpc-\w+
+
+# hit-count: 1 file-count: 1
+# PGP
+\b(?:[0-9A-F]{4} ){9}[0-9A-F]{4}\b
+
+# hit-count: 1 file-count: 1
+# javascript match regex
+\.match\(/[^/\s"]{3,}/[gim]*\s*
+
+# hit-count: 1 file-count: 1
+# GitHub JSON
+"node_id": "[-a-zA-Z=;:/0-9+_]*"
+
+# Questionably acceptable forms of `in to`
+# Personally, I prefer `log into`, but people object
+# https://www.tprteaching.com/log-into-log-in-to-login/
+\b(?:[Ll]og|[Ss]ign) in to\b
+
+# to opt in
+\bto opt in\b
+
+# github runner temp
+/home/runner/work/_temp/[-_/a-z0-9]+
+
+# docker images
+\bsha\d+:[0-9a-zA-Z]*
+
+# sha fingerprints
+SHA\d+:[\w/+]+
+
+# integrity
+integrity sha\d+-[a-zA-Z0-9/+=]*
+
+# gh codespace
+gh codespace .* -c [-a-z0-9]+
+
+repositoryId: "[^"]+"
+
+"token":".*?"
+
+# (W)ord
+\([A-Za-z]\)[a-z]+
+
+# Docker pull
+[0-9a-f]+: Pull complete
+
+# User-Agents
+User-Agent: \S+
+
+# repository's (in a file path) -- the `'`s are omitted
+-repositorys-
+
+# github repositories
+\[[^\] ]+\]\(https://github\.com/[^/]+/[^/]+\)
+
+^GITHUB-PUBLIC-KEY-[A-Z]+: .*$
+
+# migration source
+["`]MS_.*?["`]
+
+"id":\s*".*?"
+
+# content/admin/configuration/configuring-user-applications-for-your-enterprise/configuring-email-for-notifications.md
+54-171-144-1 postfix/.*$
+
+# markdown anchor targets
+\]\((?:/graphql/reference/[a-z]+]|)#[-a-z_]+\)
+
+# buggy importer that doesn't take PRs or feedback
+^  travis-ci.*
+
+# impossible to determine without asking an engineer what they were thinking
+elsif this this
+
+# third party output YAMLException: .*
+can not read a block mapping entry
+
+# token
+--destination-token "\w+"
+
+# buggy github api
+Reasons why the current viewer can not update this comment
+
+# acceptable duplicates
+# ls directory listings
+[-bcdlpsw](?:[-r][-w][-SsTtx]){3}[\.+*]?\s+\d+\s+\S+\s+\S+\s+\d+\s+
+# mount
+\bmount\s+-t\s+(\w+)\s+\g{-1}\b
+# C types and repeated CSS values
+\s(auto|bla|center|die|div|inherit|long|LONG|none|normal|solid|Something|that|thin|transparent|very)(?: \g{-1})+\s
+# C struct
+\bstruct\s+(\w+)\s+\g{-1}\b
+# go templates
+\s(\w+)\s+\g{-1}\s+\`(?:graphql|inject|json|yaml):
+# doxygen / javadoc / .net
+(?:[\\@](?:brief|groupname|t?param|return|retval)|(?:public|private|\[Parameter(?:\(.+\)|)\])(?:\s+static|\s+override|\s+readonly)*)(?:\s+\{\w+\}|)\s+(\w+)\s+\g{-1}\s
+
+# Commit message -- Signed-off-by and friends
+^\s*(?:(?:Based-on-patch|Co-authored|Helped|Mentored|Reported|Reviewed|Signed-off)-by|Thanks-to): (?:[^<]*<[^>]*>|[^<]*)\s*$
+
+# Autogenerated revert commit message
+^This reverts commit [0-9a-f]{40}\.$
+
+# src/rest/fixtures/create-rest-examples.js
+key: '[^-']{16,}?'
+
+# content/code-security/supply-chain-security/understanding-your-software-supply-chain/troubleshooting-the-dependency-graph.md Regular expressions
+<code>\(.*</code>
+
+# ignore long runs of a single character:
+\b([A-Za-z])\g{-1}{3,}\b

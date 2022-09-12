@@ -1,0 +1,44 @@
+# Public Keys
+-----BEGIN PUBLIC KEY-----
+-----END PUBLIC KEY-----
+
+# False positive: `-----BEGIN RSA PRIVATE KEY-----`
+'-----BEGIN RSA PRIVATE KEY-----*
+*
+
+# RSA Private Key
+-----BEGIN RSA PRIVATE KEY-----
+-----END RSA PRIVATE KEY-----
+
+# GPG Public Key
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+-----END PGP PUBLIC KEY BLOCK-----
+
+# False positive: `redirect_from:`
+redirect_from: {
+}
+
+# False positive: `redirect_from:`
+title: Creating your first commit
+redirect_from:
+
+# markdown headers
+redirect_from:
+---
+
+# content/code-security/secret-scanning/defining-custom-patterns-for-secret-scanning.md
+These tokens would match the custom pattern described above:
+Defining a custom pattern for an organization
+
+# content/admin/configuration/configuring-user-applications-for-your-enterprise/configuring-email-for-notifications.md
+This is a test email generated from https://10.0.0.68/setup/settings
+```
+
+# src/languages/lib/correct-translation-content.js
+Qualifizierer
+//
+
+# content/authentication/keeping-your-account-and-data-secure/reviewing-your-ssh-keys.md
+# content/authentication/troubleshooting-ssh/error-permission-denied-publickey.md
+ssh-add -l -E
+```
